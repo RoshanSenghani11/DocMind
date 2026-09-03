@@ -28,7 +28,7 @@ part of the document was used to answer.
 ## Setup
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/RoshanSenghani11/DocMind
 cd docmind
 pip install -r requirements.txt
 ```
@@ -71,3 +71,10 @@ docmind/
 Built to demonstrate practical understanding of Retrieval-Augmented
 Generation — an architecture used in real-world products like ChatPDF,
 Notion AI, and enterprise document assistants.
+
+## Live Demo Link of DocMind
+
+RAG-based Q&A system that lets you chat with your PDFs using semantic search and LLM-powered answers with source citations.
+```
+https://docmind-2611.streamlit.app/
+```
