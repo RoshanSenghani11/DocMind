@@ -7,6 +7,7 @@ in ChromaDB (a free, local vector database) for fast similarity search.
 import chromadb
 from sentence_transformers import SentenceTransformer
 from typing import List, Dict
+import os 
 
 # Free, local embedding model — no API key or cost needed.
 # Runs on CPU, ~80MB, good quality for this use case.
@@ -14,7 +15,9 @@ EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
 
 
 class VectorStore:
-    def __init__(self, persist_path: str = "./vectorstore", collection_name: str = "docmind"):
+    def __init__(self, persist_path: str = None, collection_name: str = "docmind"):
+        if persist_path is None:
+            persist_path = os.path.join(os.path.dirname(__file__),"vectorstore")
         self.model = SentenceTransformer(EMBED_MODEL_NAME)
         self.client = chromadb.PersistentClient(path=persist_path)
         self.collection = self.client.get_or_create_collection(name=collection_name)
