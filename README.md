@@ -59,6 +59,18 @@ docmind/
 └── README.md
 ```
 
+## Troubleshooting
+
+**Error: `ValueError: Could not connect to tenant default_tenant. Are you sure it exists?`**
+
+This happens if ChromaDB's local database gets corrupted or left in a broken state (usually from an abrupt crash or a version change). To fix it:
+
+1. Delete the `vectorstore` folder inside the `app` directory:
+
+2. Restart the app and re-upload your PDF — a fresh database will be created automatically.
+
+You may also see harmless warnings in the terminal like `Failed to send telemetry event` or messages about `torch.classes` — these do not affect functionality and can be safely ignored.
+
 ## Future Improvements
 
 - Support multiple file formats (docx, txt, web pages)
